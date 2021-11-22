@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Test Component 1`] = `
+<nuxt-link
+  to="https://nuxtjs.org"
+>
+  
+  NuxtJs
+
+</nuxt-link>
+`;

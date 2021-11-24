@@ -7,7 +7,7 @@ env:
     DOCKERHUB_PASS: arn:aws:secretsmanager:ap-northeast-1:$AWS_ACCOUNT_ID:secret:dws-docker-6KBPtw:DOCKERHUB_PASS
 
 phases:
-  build:
+  install:
     commands:
       - sudo apt-get update -y
       - sudo apt-get upgrade -y

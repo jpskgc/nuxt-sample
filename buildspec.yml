@@ -1,0 +1,21 @@
+
+version: 0.2
+
+env:
+  secrets-manager:
+    DOCKERHUB_USER: arn:aws:secretsmanager:ap-northeast-1:$AWS_ACCOUNT_ID:secret:dws-docker-6KBPtw:DOCKERHUB_USER
+    DOCKERHUB_PASS: arn:aws:secretsmanager:ap-northeast-1:$AWS_ACCOUNT_ID:secret:dws-docker-6KBPtw:DOCKERHUB_PASS
+
+phases:
+  build:
+    commands:
+      - sudo apt-get update -y
+      - sudo apt-get upgrade -y
+      - sudo apt install -y python-pip python-dev && sudo pip install awscli
+  pre_build:
+    commands:
+      - yarn install --frozen-lockfile
+  build:
+    commands:
+      - yarn generate
+      - aws s3 sync --delete ./dist s3://$DEV_S3BUCKET_NAME

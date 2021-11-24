@@ -9,9 +9,9 @@ env:
 phases:
   install:
     commands:
-      - sudo apt-get update -y
-      - sudo apt-get upgrade -y
-      - sudo apt install -y python-pip python-dev && sudo pip install awscli
+      - apt-get update -y
+      - apt-get upgrade -y
+      - apt install -y python-pip python-dev && pip install awscli
   pre_build:
     commands:
       - yarn install --frozen-lockfile

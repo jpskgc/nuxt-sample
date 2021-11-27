@@ -8,4 +8,5 @@ COPY ./package.json ./yarn.lock /app/
 
 RUN yarn --pure-lockfile
 
+ENV HOST 0.0.0.0
 EXPOSE 3000

@@ -5,7 +5,7 @@
       label="Name"
       required
     ></v-text-field>
-<v-menu
+  <v-menu
         ref="menu"
         v-model="menu"
         :close-on-content-click="false"
@@ -60,12 +60,25 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import timepicker from 'vue2-timepicker'
 
-@Component({})
+@Component({
+  components: {
+    timepicker,
+  }
+})
 export default class RegistrationFormComponent extends Vue {
 
-  get date(): string {
-    return (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)
+  name: string | null = null;
+  date: string | null = null;
+
+  mounted() {
+    this.date = (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)
+  }
+
+  submit(){
+    console.log(this.name)
+    console.log(this.date)
   }
 }
 </script>

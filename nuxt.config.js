@@ -52,9 +52,8 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
       themes: {
-        dark: {
+        light: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
@@ -64,7 +63,7 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
